@@ -1,0 +1,23 @@
+﻿@model Customer
+
+<form asp-action="AddCustomer">
+    <div>
+        <label>CustomerName</label>
+        <input asp-for="Name" type="text" />
+    </div>
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" type="email"  />
+    </div>
+    <div>
+        <label>Phone</label>
+        <input asp-for="Phone" type="number"  />
+    </div>
+    <div>
+        <label>Age</label>
+        <input asp-for="Age" type="number"  />
+    </div>
+    <button>Submit</button>
+</form>
+
+<h2>@TempData["a "]</h2>

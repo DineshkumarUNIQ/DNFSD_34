@@ -1,0 +1,39 @@
+﻿@model IEnumerable<Customer>
+
+<a asp-action="AddCustomer" asp-controller="School" class="btn btn-success">AddCustomer</a>
+
+<form asp-controller="School" asp-action="Search" method="get">
+    <input placeholder="input" name="input" type="text" />
+    <button> submit</button>
+</form>
+
+<table class="table table-success table-striped-columns">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Age</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cus in Model)
+        {
+            <tr>
+                <td>@cus.Name</td>
+                <td>@cus.Email</td>
+                <td>@cus.Phone</td>
+                <td>@cus.Age</td>
+                <td>
+                    <a class="btn btn-danger" asp-action="DeleteCustomer" asp-controller="School" asp-route-id="@cus.Id">Delete</a>
+                    </td>
+            </tr>
+        
+    }
+    </tbody>
+</table>
+
+<a class="btn btn-dark" asp-action="TruncateCustomer" asp-controller="School">Truncate</a>
+
+
