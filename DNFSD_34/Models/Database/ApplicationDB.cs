@@ -10,5 +10,6 @@ namespace DNFSD_34.Models.Database
         }
 
         public DbSet<Customer> Customers { get; set; }
+        public DbSet<Employee> Employees { get; set; }
     }
 }
